@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyWithingsApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="confirm_action">Confirm Action</string>
+    <string name="proceed_view_image_detail">Do you want to proceed to view the image?</string>
+
+    <string name="error_message_network">Network error.Please check your Internet connection</string>
+    <string name="enter_the_query">Enter the query</string>
+    <string name="enter_query_to_search">Enter query to search</string>
+    <string name="search">Search</string>
+    <string name="title_pixabay_detail">Image Details</string>
+    <string name="title_animation">Animation</string>
+    <string name="show_details">Show Details</string>
+    <string name="show_animation">Show Animation</string>
+    <string name="show_more_details">Are you want to see more details?</string>
+    <string name="show_animation_text">Do you want to animate this selection?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+
+</resources>
