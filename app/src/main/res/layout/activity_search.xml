@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     android:id="@+id/main_rootView"
-    tools:context=".ui.search.SearchFragment">
+    tools:context=".ui.search.SearchActivity">
 
     <com.example.mywithingsapp.commons.extensions.SearchView
         android:id="@+id/searchView"

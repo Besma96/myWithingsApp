@@ -19,5 +19,6 @@
     <string name="show_animation_text">Do you want to animate this selection?</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
+    <string name="animer_la_selection">Animer la selection</string>
 
 </resources>

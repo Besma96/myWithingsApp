@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable
 import androidx.test.espresso.idling.CountingIdlingResource
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.appcompat.app.AppCompatActivity
@@ -22,16 +23,16 @@ import com.example.mywithingsapp.datasource.api.NetworkState
 import com.example.mywithingsapp.domain.entities.Image
 import com.example.mywithingsapp.ui.animation.AnimationImageActivity
 import com.example.mywithingsapp.ui.details.ImageDetailsActivity
-import kotlinx.android.synthetic.main.fragment_search.main_rootView
-import kotlinx.android.synthetic.main.fragment_search.progress_bar
-import kotlinx.android.synthetic.main.fragment_search.recylv_pixabay
+import kotlinx.android.synthetic.main.activity_search.main_rootView
+import kotlinx.android.synthetic.main.activity_search.progress_bar
+import kotlinx.android.synthetic.main.activity_search.recylv_pixabay
 import kotlinx.android.synthetic.main.view_search.button_selected
 import kotlinx.android.synthetic.main.view_search.close_search_button
 import kotlinx.android.synthetic.main.view_search.execute_search_button
 import kotlinx.android.synthetic.main.view_search.search_input_text
 import org.koin.android.ext.android.inject
 
-class SearchFragment : AppCompatActivity(), View.OnClickListener, HitsItem {
+class SearchActivity : AppCompatActivity(), View.OnClickListener, HitsItem {
 
     init {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
@@ -46,11 +47,12 @@ class SearchFragment : AppCompatActivity(), View.OnClickListener, HitsItem {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_search)
+        setContentView(R.layout.activity_search)
 
         savedInstanceState?.getString(EXTRA_QUERY)?.let { query = it }
 
         initRecyclerView()
+        animationButtonAppear()
 
         /*
          * Check Internet Connection
@@ -70,7 +72,6 @@ class SearchFragment : AppCompatActivity(), View.OnClickListener, HitsItem {
     private fun subscribeObservables(query: String) {
         viewModel.fetchKeyQuery(query)
         viewModel.pixabayData.observe(this, Observer { adapter.submitList(it) })
-
         viewModel.networkState?.observe(this, Observer {
 
             /*
@@ -132,7 +133,7 @@ class SearchFragment : AppCompatActivity(), View.OnClickListener, HitsItem {
 
     // Setup the adapter class for the RecyclerView
     private fun initRecyclerView() {
-        recylv_pixabay.layoutManager = GridLayoutManager(this, 2)
+        recylv_pixabay.layoutManager = GridLayoutManager(this.applicationContext, 2)
         recylv_pixabay.adapter = adapter
         adapter.setOnHitsItemClickListener(this)
         adapter.setOnButtonClickListener(this)
@@ -183,16 +184,22 @@ class SearchFragment : AppCompatActivity(), View.OnClickListener, HitsItem {
     }
 
     private fun isSelectedCardAction(image: Image?) {
+        if (image == null)  Log.d("heyhey", "something is not working")
         image?.isSelected = image?.isSelected != true
     }
 
     private fun selectedImagesToAnimate(image: Image?, view: View) {
-        if (image?.isSelected == true) {
-            selectedImage.add(selectedImage.lastIndex + 1, image)
-            view.foreground = ColorDrawable(resources.getColor(R.color.colorTransparentDark))
-        } else {
-            selectedImage.remove(image)
-            view.foreground = ColorDrawable(resources.getColor(R.color.colorTransparent))
+        if(image != null) {
+            Log.d("heyhey", "$image")
+            if (image.isSelected == true) {
+                selectedImage.add(selectedImage.lastIndex + 1, image)
+                view.foreground = ColorDrawable(resources.getColor(R.color.colorTransparentDark))
+            } else {
+                selectedImage.remove(image)
+                view.foreground = ColorDrawable(resources.getColor(R.color.colorTransparent))
+            }
+        }else {
+            Log.d("heyhey", "something is not working")
         }
     }
 

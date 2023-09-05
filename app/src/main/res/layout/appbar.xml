@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorAccent">
 
         <ImageButton
             android:id="@+id/btn_back"
@@ -29,7 +29,7 @@
             android:id="@+id/appbar_title"
             style="@style/WrapWidthHeight"
             android:text="@string/title_pixabay_detail"
-            android:textColor="@android:color/white"
+            android:textColor="@color/purple_200"
             android:textSize="@dimen/text_size_19sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -43,8 +43,6 @@ class SearchAdapter :
 
     inner class MyViewHolder(private val binding: AdapterSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val cardView: CardView = itemView.findViewById(R.id.card_view)
-
         fun bind(image: Image, clickListener: HitsItem?) {
             binding.hitsList = image
             itemView.setOnClickListener {

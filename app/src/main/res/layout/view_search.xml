@@ -2,15 +2,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="?actionBarSize"
-    android:background="@color/colorAccent">
+    android:layout_height="?actionBarSize">
 
     <RelativeLayout
         android:id="@+id/search_closed_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorAccent">
 
         <TextView
             android:id="@+id/search_text"
@@ -20,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dimen_15dp"
             android:text="Recherche"
-            android:textColor="@color/black"
+            android:textColor="@color/purple_200"
             android:textSize="@dimen/text_size_19sp"
             android:textStyle="bold" />
 
@@ -28,16 +27,16 @@
             android:id="@+id/button_selected"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/dimen_10dp"
-            android:paddingRight="@dimen/dimen_10dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dimen_20dp"
             android:layout_toEndOf="@id/search_text"
             android:background="@drawable/button_shape"
-            android:text="Animer la selection"
-            android:textColor="@color/white"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_10dp"
+            android:text="@string/animer_la_selection"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_14sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/open_search_button"
@@ -59,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@android:color/white"
+        android:background="@color/purple_200"
         android:visibility="gone">
 
         <ImageButton

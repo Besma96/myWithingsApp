@@ -1,8 +1,8 @@
 package com.example.mywithingsapp.ui.search
 
 import androidx.lifecycle.LiveData
-import androidx.paging.DataSource
 import androidx.lifecycle.switchMap
+import androidx.paging.DataSource
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.example.mywithingsapp.commons.base.BaseViewModel
