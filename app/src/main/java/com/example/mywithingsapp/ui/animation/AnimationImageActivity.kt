@@ -48,6 +48,12 @@ class AnimationImageActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.idViewPager)
 
         convertUrlListToDrawableList()
+
+        while (listToAnimate.size != imageList.size)
+
+            viewPagerAdapter = ViewPagerAdapter(this@AnimationImageActivity, imageList)
+            viewPager.adapter = viewPagerAdapter
+
     }
 
     //actually not working at all

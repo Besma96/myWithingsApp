@@ -13,6 +13,7 @@
     <color name="colorAccent">#E9131117</color>
     <color name="colorTransparentDark">#ad000000</color>
     <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorTransparent_white">#4DFFFFFF</color>
     <color name="colorTransparent_tag">#61BB86FC</color>
     <color name="colorLightGreen">#ad000000</color>
 </resources>

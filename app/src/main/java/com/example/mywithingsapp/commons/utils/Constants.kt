@@ -20,7 +20,7 @@ class Constants {
 
         const val PER_PAGE_TAG: String = "per_page"
 
-        const val IMAGE_TAG: String = "imageTags"
+        const val IMAGE_TAG: String = "hits"
 
         const val ID_TAG: String = "id"
 
